@@ -42,20 +42,7 @@ pipeline{
     //     bat 'docker ps -a'
         }
     }
-    stage('pull image from docker hub') {
-        steps{
-        bat "docker pull $registry"
-        
-        bat 'docker images -a'
-        bat 'docker ps -a'
-        
-        }
-    }
-    stage('run image at 8080 port') {
-        steps{
-        bat "docker run -p 8080:8080 $registry"
-        }
-    }
+   
    
         }
     
