@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.*;
 @EnableAutoConfiguration
 public class Example {
 
-    @RequestMapping("/")
-    String home() {
-        return "Hello World - v3!";
+    @RequestMapping(value = "/{msg}", method = RequestMethod.GET)
+    String home(@PathVariable("msg") String msg) {
+        return msg;
     }
 
     public static void main(String[] args) throws Exception {
